@@ -16,7 +16,5 @@ while process:
             # print(proc.returncode)
             if proc.returncode == 0:
                 print(ip)
-            elif proc.returncode == 1:
-                pass
             break 
     
