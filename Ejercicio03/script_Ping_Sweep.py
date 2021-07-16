@@ -1,20 +1,22 @@
 import subprocess
-import sys 
 
-p = {}
+# diccionario de las ips
+process = {}
+
 for i in range(1, 255):
-    ip = "{}.{}".format(sys.argv[1], i)
-    p[ip] = subprocess.Popen(['ping', '-c1', ip], stdout=subprocess.DEVNULL)
+    # ip general
+    ip = "192.168.0."+str(i)
+    process[ip] = subprocess.Popen(['ping', '-c1', ip], stdout=subprocess.DEVNULL)
     
-while p:
-    for ip, proc in p.items():
+while process:
+    for ip, proc in process.items():
+        # si encuentra un proceso NONE, la ip la eliminamos
         if proc.poll() is not None:
-            del p[ip]
+            del process[ip]
+            # print(proc.returncode)
             if proc.returncode == 0:
                 print(ip)
             elif proc.returncode == 1:
                 pass
-            else:
-                print('%s error' % ip)
             break 
     
