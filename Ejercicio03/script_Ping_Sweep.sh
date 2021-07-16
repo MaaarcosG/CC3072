@@ -1,6 +1,8 @@
 #!/bin/bash
+ 
+ip=192.168.0.
 
-for ip  in `seq 1 255` ; do
-ping $1.$ip -c 1| grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
+for i in "$ip"{0..255}; do
+    ping $i -c 1 | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
 done
 
