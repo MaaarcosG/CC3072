@@ -1,0 +1,15 @@
+EHLO localhost
+AUTH LOGIN
+anVhbm1hMjgwN0BnbWFpbC5jb20=
+TWFyY29zMTk5OV9TdXBlcg==
+MAIL FROM: <juanma2807@gmail.com>
+RCPT TO: <melinton.navas.7@gmail.com>
+DATA
+From: [MG] <juanma2807@gmail.com>
+To: <melinton.navas.7@gmail.com>
+Subject: Marcos GUtierrez 17909 - Seguridad Ofensiva 
+Enviado desde ncat por smtp
+
+Marcos GUtierrez 17909
+.
+QUIT
